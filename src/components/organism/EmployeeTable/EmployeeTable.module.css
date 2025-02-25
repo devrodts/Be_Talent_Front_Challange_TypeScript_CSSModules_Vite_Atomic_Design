@@ -1,0 +1,97 @@
+.tableContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 95vw;
+    height: fit-content;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    background-color: inherit;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+.employeeRowContent{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0500FF;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: none;
+    width: 95vw;
+    height: 60px;
+}
+
+.employeeRowContent div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #d3d3d3;
+    width: 255px;
+}
+.employeeRowContent p{
+    width: 100%;
+}
+    
+.employeeRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-height: 50px;
+}   
+.employeeRow div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    height: 50px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.firstColumn{
+    margin-left: 10px;
+}
+.firstColumn img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.employeeRow img{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+
+@media (max-width: 900px) {
+    .firstColumn{
+        margin-left: 0;
+    }
+    .employeeRow{
+        height: 40px;
+        flex-direction: column;
+    }
+
+    .employeeRow img{
+        margin-left: 0 !important;
+        margin-right: 10px;
+    }
+    .employeeRowContent div{
+        height: 50px;
+        border-bottom: none;
+    }
+}
+
