@@ -26,46 +26,42 @@ const EmployeeTableMobile = ({
           const isOpen = openEmployeeIds.includes(employee.id);
 
           return (
-            <div className={styles.employeeRowContainer}>
-                
-            <section key={employee.id} className={styles.employeeRow}>
-              <div className={styles.firstColumn}>
-                <div className={styles.firstColumnContent}>
-                  <img src={employee.image} alt={employee.name} />
-                </div>
-                <div className={styles.nameContainer}>
+            <div key={employee.id} className={styles.employeeRowContainer}>
+              <section className={styles.employeeRow}>
+                <div className={styles.firstColumn}>
+                  <div className={styles.firstColumnContent}>
+                    <img src={employee.image} alt={employee.name} />
+                  </div>
+                  <div className={styles.nameContainer}>
                     <h3 className={styles.name}>{employee.name}</h3>
+                  </div>
+                  <div className={styles.toggleContainer} onClick={() => handleToggle(employee.id)}>
+                    <button>
+                      <ToggleArrowIcon isOpen={isOpen} />
+                    </button>
+                  </div>
                 </div>
-
-                <div className={styles.toggleContainer} onClick={() => handleToggle(employee.id)}>
-                  <button>
-                    <ToggleArrowIcon isOpen={isOpen} />
-                  </button>
-                </div>
+              </section>
+              
+              <div className={styles.detailsContainer}>
+                {isOpen && (
+                  <div className={styles.detailsContainer}>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoRowTitle}>Cargo</span>
+                      <span>{employee.job}</span>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoRowTitle}>Data de admissão</span>
+                      <span>{dateFormatter(employee.admission_date)}</span>
+                    </div>
+                    <div className={styles.infoRow}>
+                      <span className={styles.infoRowTitle}>Telefone</span>
+                      <span>{phoneFormatter(employee.phone)}</span>
+                    </div>
+                  </div>
+                )}
               </div>
-            </section>
-            <div className={styles.detailsContainer}>
-            {isOpen && (
-                <div className={styles.detailsContainer}>
-
-                  <div className={styles.infoRow}>
-                    <span className={styles.infoRowTitle}>Cargo</span>
-                    <span>{employee.job}</span>
-                  </div>
-                  <div className={styles.infoRow}>
-                    <span className={styles.infoRowTitle}>Data de admissão</span>
-                    <span>{dateFormatter(employee.admission_date)}</span>
-                  </div>
-                  <div className={styles.infoRow}>
-                    <span className={styles.infoRowTitle}>Telefone</span>
-                    <span>{phoneFormatter(employee.phone)}</span>
-                  </div>
-                </div>
-              )}
             </div>
-
-            </div>
-            
           );
         })}
       </div>
