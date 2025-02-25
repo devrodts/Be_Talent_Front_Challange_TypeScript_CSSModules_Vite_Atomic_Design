@@ -1,0 +1,16 @@
+.header{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    height: 80px;
+}
+
+@media (max-width: 768px) {
+    .header{
+        height: 60px;
+        padding: 10px 10px;
+    }
+}
